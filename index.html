@@ -259,18 +259,26 @@
 
     <!-- CENTERED TIMING NOTE -->
     <div class="timing-note">
-      The survey should take approximately
-      <strong>20 to 30 minutes</strong> to complete.<br>
-      When you're ready, click <strong>Start Survey</strong> to begin.
+      When you're ready, click <b>Start Survey</b> to beginn.
+      <strong>Start Survey</strong>.
     </div>
 
-    <!-- CENTERED START BUTTON -->
-    <div class="button-container">
-      <button onclick="window.location.href='https://tally.so/r/q48oOg'">
-        Start Survey
-        </button>
-        Start Survey
-    </div>
+    <button class="start-button" onclick="startSurvey()">
+      Start Survey
+    </button>
+  </main>
+
+  <script>
+    function startSurvey() {
+      const startTime = new Date().toISOString();
+
+      const tallyUrl =
+        "https://tally.so/r/q48oOg?start_time=" +
+        encodeURIComponent(startTime);
+
+      window.location.href = tallyUrl;
+    }
+  </script>
 
   </main>
 
