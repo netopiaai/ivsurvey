@@ -259,7 +259,8 @@
     <div class="next-wrapper">
       <a
         class="next-button"
-        href="https://tally.so/r/q48oOg"
+        href="#"
+        onclick="startSurvey(event)"
       >
         Start Survey
         <span class="arrow">→</span>
@@ -268,6 +269,24 @@
 
   </main>
 
+  <script>
+  function startSurvey(event) {
+    event.preventDefault();
+
+    // Record the exact time the participant clicks Start Survey
+    const startTime = new Date().toISOString();
+
+    // Your Tally survey
+    const tallyURL = "https://tally.so/r/q48oOg";
+
+    // Send the start time to Tally
+    const surveyURL =
+      tallyURL + "?start_time=" + encodeURIComponent(startTime);
+
+    // Open the survey
+    window.location.href = surveyURL;
+  }
+</script>
+
 </body>
 </html>
-```
