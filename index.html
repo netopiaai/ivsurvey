@@ -1,284 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Advertisement Survey</title>
 
-  <title>Netopia AI Consumer Survey</title>
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
-  * {
-    box-sizing: border-box;
-    font-family: Helvetica, Arial, sans-serif;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  body {
-  margin: 0;
-  min-height: 100vh;
-  padding: 55px 20px;
-
-  color: #303030;
-  line-height: 1.6;
-
-  /*
-    Soft aurora background:
-    colorful around the edges,
-    calm and light behind the survey.
-  */
-  background:
-    radial-gradient(
-      ellipse at 10% 10%,
-      rgba(255, 196, 170, 0.55) 0%,
-      transparent 42%
-    ),
-    radial-gradient(
-      ellipse at 90% 15%,
-      rgba(183, 204, 244, 0.55) 0%,
-      transparent 42%
-    ),
-    radial-gradient(
-      ellipse at 15% 90%,
-      rgba(187, 224, 207, 0.50) 0%,
-      transparent 40%
-    ),
-    radial-gradient(
-      ellipse at 90% 85%,
-      rgba(218, 195, 235, 0.48) 0%,
-      transparent 42%
-    ),
-    linear-gradient(
-      135deg,
-      #fffaf7 0%,
-      #f9fbff 50%,
-      #fffaf8 100%
-    );
-
-  background-attachment: fixed;
-}
-
-  /* Main survey card */
-  .survey-container {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 50px 54px;
-
-    background: rgba(255, 255, 255, 0.98);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    border-radius: 24px;
-
-    box-shadow:
-      0 18px 50px rgba(50, 45, 40, 0.09);
-  }
-
-  /* TITLE */
-  .survey-title {
-    text-align: center;
-    font-size: 35px;
-    line-height: 1.2;
-
-    margin: 0 0 36px;
-
-    color: #202020;
-    letter-spacing: -0.5px;
-  }
-
-  /* BODY CONTENT */
-  .survey-content {
-    text-align: left;
-    font-size: 17px;
-  }
-
-  .survey-content p {
-    margin: 0 0 26px;
-  }
-
-  .survey-content strong {
-    color: #252525;
-  }
-
-  .survey-content a {
-    color: #345f87;
-    text-decoration: underline;
-  }
-
-  /* TIMING CARD */
-  .timing-note {
-    margin-top: 34px;
-    padding: 24px 28px;
-
-    text-align: center;
-    font-size: 17px;
-    line-height: 1.55;
-
-    background: #fff5ec;
-    border: 1px solid #f1ded0;
-    border-radius: 16px;
-  }
-
-  /* BUTTON */
-  .button-container {
-    text-align: center;
-    margin-top: 34px;
-  }
-
-  .start-button {
-    display: inline-block;
-    min-width: 290px;
-
-    padding: 17px 44px;
-
-    background: #262626;
-    color: #ffffff;
-
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-
-    border: 2px solid #262626;
-    border-radius: 14px;
-
-    cursor: pointer;
-
-    transition:
-      transform 0.15s ease,
-      background-color 0.15s ease;
-  }
-
-  .start-button:hover {
-    background: #111111;
-    transform: translateY(-2px);
-  }
-
-  .start-button:focus {
-    outline: 4px solid #a9c8df;
-    outline-offset: 4px;
-  }
-
-  /* MOBILE */
-  @media (max-width: 600px) {
     body {
-      padding: 22px 14px;
+      font-family: "Inter", sans-serif;
+      color: #262626;
 
-      /* Keep decorations less distracting on small screens */
+      min-height: 100vh;
+
       background:
         radial-gradient(
-          circle at 0% 5%,
-          rgba(255, 198, 160, 0.35) 0,
-          rgba(255, 198, 160, 0.35) 80px,
-          transparent 81px
+          circle at 15% 10%,
+          rgba(255, 210, 185, 0.85),
+          transparent 35%
         ),
         radial-gradient(
-          circle at 100% 95%,
-          rgba(190, 205, 245, 0.35) 0,
-          rgba(190, 205, 245, 0.35) 100px,
-          transparent 101px
+          circle at 85% 10%,
+          rgba(200, 220, 255, 0.9),
+          transparent 38%
         ),
-        #fffaf7;
+        radial-gradient(
+          circle at 15% 85%,
+          rgba(206, 239, 229, 0.85),
+          transparent 38%
+        ),
+        radial-gradient(
+          circle at 85% 85%,
+          rgba(239, 218, 246, 0.85),
+          transparent 38%
+        ),
+        #f8f8f8;
+
+      padding: 22px;
     }
 
-    .survey-container {
-      padding: 34px 24px;
-      border-radius: 18px;
-    }
-
-    .survey-title {
-      font-size: 32px;
-      margin-bottom: 30px;
-    }
-
-    .survey-content,
-    .timing-note {
-      font-size: 17px;
-    }
-
-    .timing-note {
-      padding: 20px;
-    }
-
-    .start-button {
+    .page {
       width: 100%;
-      min-width: 0;
-      font-size: 19px;
+      display: flex;
+      justify-content: center;
     }
-  }
 
-  /* Accessibility */
-  @media (prefers-reduced-motion: reduce) {
+    .survey-card {
+      width: 100%;
+      max-width: 780px;
+
+      background: rgba(255, 255, 255, 0.97);
+
+      border-radius: 24px;
+
+      padding: 52px 54px 50px;
+
+      box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.06);
+
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 33px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+
+      margin-bottom: 42px;
+    }
+
+    .content {
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    .content p {
+      margin-bottom: 24px;
+    }
+
+    .content strong {
+      font-weight: 700;
+    }
+
+    .content a {
+      color: #386d9e;
+      text-decoration: underline;
+    }
+
+    .notice {
+      margin-top: 34px;
+
+      background: #fff5ec;
+      border: 1px solid #f2d4bd;
+
+      border-radius: 15px;
+
+      padding: 24px 30px;
+
+      text-align: center;
+
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .notice strong {
+      font-weight: 700;
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: center;
+
+      margin-top: 32px;
+    }
+
     .start-button {
-      transition: none;
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 290px;
+      min-height: 70px;
+
+      background: #272727;
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 17px;
+      font-weight: 700;
+
+      border-radius: 13px;
+
+      transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease;
     }
 
     .start-button:hover {
-      transform: none;
+      background: #111111;
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.14);
     }
-  }
-</style>
+
+    .start-button:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 14px;
+      }
+
+      .survey-card {
+        padding: 38px 26px;
+        border-radius: 20px;
+      }
+
+      h1 {
+        font-size: 29px;
+        margin-bottom: 34px;
+      }
+
+      .content {
+        font-size: 15px;
+      }
+
+      .notice {
+        padding: 22px 18px;
+      }
+
+      .start-button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <main class="survey-container">
+  <main class="page">
 
-    <h2 class="survey-title">
-      Netopia AI Consumer Survey
-    </h2>
+    <section class="survey-card">
 
-    <div class="survey-content">
+      <h1>Image Advertisement Survey</h1>
 
-      <p>
-        Hi! Thank you for taking the time to answer
-        Netopia's image advertisement survey! 😊
-      </p>
+      <div class="content">
 
-      <p>
-        In this survey, we will be asking you about some basic
-        <strong>demographic information</strong>, your
-        <strong>general views on advertising</strong>, and your
-        <strong>impressions of different image ads</strong>.
-        Your responses are valuable to us and to our efforts of
-        improving our capabilities.
-      </p>
+        <p>
+          Hi! Thank you for taking the time to answer
+          Netopia's image advertisement survey! 😊
+        </p>
 
-      <p>
-        There are no right or wrong answers, so please answer as
-        honestly as you can.
-      </p>
+        <p>
+          In this survey, we will be asking you about some basic
+          <strong>demographic information</strong>, your
+          <strong>general views on advertising</strong>, and your
+          <strong>impressions of different image ads</strong>.
+          Your responses are valuable to us and to our efforts of
+          improving our capabilities.
+        </p>
 
-      <p>
-        The information you provide will be anonymized and kept
-        confidential, and only Netopia AI will have access to the
-        original data. You may request access to your data at any
-        time, and ask for it to be corrected, transferred, or
-        deleted. If you have any other questions or concerns,
-        please contact us at
-        <a href="mailto:survey@netopia.ai">survey@netopia.ai</a>.
-      </p>
+        <p>
+          There are no right or wrong answers, so please answer as
+          honestly as you can.
+        </p>
 
-    </div>
+        <p>
+          The information you provide will be anonymized and kept
+          confidential, and only Netopia AI will have access to the
+          original data. You may request access to your data at any
+          time, and ask for it to be corrected, transferred, or deleted.
+          If you have any other questions or concerns, please contact us
+          at
+          <a href="mailto:survey@netopia.ai">
+            survey@netopia.ai
+          </a>.
+        </p>
 
-    <!-- CENTERED TIMING NOTE -->
-    <div class="timing-note">
-      When you're ready, click <b>Start Survey</b> to beginn.
-      <strong>Start Survey</strong>.
-    </div>
+      </div>
 
-    <button class="start-button" onclick="startSurvey()">
-      Start Survey
-    </button>
-  </main>
+      <div class="notice">
+        The survey should take approximately
+        <strong>20 to 30 minutes</strong> to complete.
+        <br>
+        When you're ready, click
+        <strong>Start Survey</strong> to begin.
+      </div>
 
-  <script>
-    function startSurvey() {
-      const startTime = new Date().toISOString();
+      <div class="button-wrapper">
 
-      const tallyUrl =
-        "https://tally.so/r/q48oOg?start_time=" +
-        encodeURIComponent(startTime);
+        <!-- Replace the URL below with your Tally survey link -->
+        <a
+          class="start-button"
+          href="https://tally.so/r/q48oOg"
+        >
+          Start Survey
+        </a>
 
-      window.location.href = tallyUrl;
-    }
-  </script>
+      </div>
+
+    </section>
 
   </main>
 
