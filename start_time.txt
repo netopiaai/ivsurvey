@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Survey</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f6f8;
+      color: #202124;
+    }
+
+    .survey-card {
+      width: 100%;
+      max-width: 680px;
+      background: white;
+      border-radius: 20px;
+      padding: 56px 48px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .survey-card h1 {
+      margin: 0 0 20px;
+      font-size: 36px;
+      line-height: 1.2;
+    }
+
+    .survey-card p {
+      margin: 0 auto 18px;
+      max-width: 540px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .timing-note {
+      margin-top: 28px;
+      padding: 16px 20px;
+      background: #f7f7f7;
+      border-radius: 12px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #666;
+    }
+
+    .start-button {
+      width: 100%;
+      max-width: 360px;
+      margin-top: 32px;
+      padding: 18px 28px;
+      border: none;
+      border-radius: 12px;
+      font-size: 19px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #222;
+      color: white;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .start-button:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .start-button:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 600px) {
+      .survey-card {
+        padding: 40px 24px;
+      }
+
+      .survey-card h1 {
+        font-size: 30px;
+      }
+
+      .survey-card p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="survey-card">
+    <h1>Ready to begin?</h1>
+
+    <p>
+      Hi!<br>
+      Thank you for being part of our study. <br>
+      Please complete the survey in one sitting and answer <br>
+      each question based on your own impressions.
+    </p>
+
+    <div class="timing-note">
+      When you're ready, click <b>Start Survey</b> to beginn.
+      <strong>Start Survey</strong>.
+    </div>
+
+    <button class="start-button" onclick="startSurvey()">
+      Start Survey
+    </button>
+  </main>
+
+  <script>
+    function startSurvey() {
+      const startTime = new Date().toISOString();
+
+      const tallyUrl =
+        "https://tally.so/r/obNpkP?start_time=" +
+        encodeURIComponent(startTime);
+
+      window.location.href = tallyUrl;
+    }
+  </script>
+
+</body>
+</html>
